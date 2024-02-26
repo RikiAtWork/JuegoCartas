@@ -1,0 +1,251 @@
+@import url("https://fonts.googleapis.com/css2?family=Onest&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Onest', sans-serif;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to bottom, rgb(0, 0, 0), rgba(32, 32, 32, 0.5));
+    overflow: hidden;
+}
+
+#video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+}
+
+.principal {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+}
+
+.instrucciones {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.logo {
+    filter: invert(100);
+    transform: scale(5);
+    margin-bottom: 80px;
+}
+
+h1 {
+    font-size: 42px;
+    font-weight: 600;
+    font-style: italic;
+    color: white;
+    text-transform: uppercase;
+    text-shadow: 0 0 25px rgba(27, 253, 155, 0.623);
+}
+
+ul {
+    list-style: none;
+    color: white;
+}
+
+li {
+    color: white;
+    margin-bottom: 10px;
+}
+
+button {
+    --green: #1BFD9C;
+    font-size: 18px;
+    padding: 0.8em 4em;
+    letter-spacing: 0.06em;
+    position: relative;
+    border-radius: 0.6em;
+    overflow: hidden;
+    transition: all 0.3s;
+    line-height: 1.4em;
+    border: 2px solid var(--green);
+    background: linear-gradient(to right, rgba(27, 253, 156, 0.1) 1%, transparent 40%, transparent 60%, rgba(27, 253, 156, 0.1) 100%);
+    color: var(--green);
+    box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.4), 0 0 9px 3px rgba(27, 253, 156, 0.1);
+    cursor: pointer;
+}
+
+button:hover {
+    color: #82ffc9;
+    box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.6), 0 0 9px 3px rgba(27, 253, 156, 0.2);
+}
+
+button:before {
+    content: "";
+    position: absolute;
+    left: -4em;
+    width: 4em;
+    height: 100%;
+    top: 0;
+    transition: transform .4s ease-in-out;
+    background: linear-gradient(to right, transparent 1%, rgba(27, 253, 156, 0.1) 40%, rgba(27, 253, 156, 0.1) 60%, transparent 100%);
+}
+
+button:hover:before {
+    transform: translateX(15em);
+
+}
+
+button:active {
+    background: #00884f;
+}
+
+.content {
+    width: 100%;
+    height: 100vh;
+    background-image: radial-gradient(black 80%, #0000),
+        linear-gradient(135deg,
+            #e81cff,
+            rgb(0, 255, 242),
+            rgb(0, 110, 255),
+            rgb(210, 32, 255),
+            #e81cff,
+            rgb(0, 255, 242),
+            rgb(0, 110, 255),
+            rgb(210, 32, 255));
+    background-size: 100% 0.5%, contain;
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#tablero-juego {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.stats {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+#content-puntos {
+    color: white;
+    font-size: 2.5rem;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+#aciertos {
+    background: linear-gradient(to top, #11998e, #38ef7d);
+    width: 280px;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#fallos {
+    background: linear-gradient(to bottom, #ff0526, #f35c36);
+    width: 280px;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.card {
+    width: 150px;
+    height: 200px;
+    margin-right: 45px;
+    cursor: pointer;
+    perspective: 1000px;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.999s;
+}
+
+.card-front,
+.card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 20px;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+}
+
+.card-front {
+    background: linear-gradient(#1a1a1a, rgb(54, 54, 54)) padding-box,
+        linear-gradient(145deg, transparent 35%, #e81cff, #40c9ff) border-box;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    transform: rotateY(180deg);
+
+}
+
+.card-back {
+    background: linear-gradient(#353535, #000000) padding-box,
+        linear-gradient(145deg, transparent 35%, #e81cff, #40c9ff) border-box;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    transform: rotateY(0deg);
+
+}
+
+.card-back img {
+    width: 120px;
+    filter: invert(100);
+}
+
+.card-front img {
+    width: 100px;
+}
+
+.card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+#win {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#win h1 {
+    font-size: 5em;
+}
+
+#intentos {
+    text-shadow: 2px 2px 5px red;
+}

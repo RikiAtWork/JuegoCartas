@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FC 24</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="icon" type="image/png" href="favicon.png"/>
+
+</head>
+
+<body>
+    <div class="container">
+
+        <video autoplay muted loop id="video-bg">
+            <source src="fondo.mp4" type="video/mp4">
+        </video>
+
+        <div class="principal">
+            <div class="instrucciones">
+
+                <img src="logo.svg" alt="logo FC 24" class="logo">
+                <h1>Juego de emparejamiento</h1>
+                <div class="lista">
+                    <ul>
+                        <li>Los jugadores de futbol han sido escondidos</li>
+                        <li>Cada jugador se encuentra dos veces en una carta</li>
+                        <li>Solo puedes seleccionar 2 cartas a la vez</li>
+                        <li>El objetivo es encontrar la pareja de jugadores en el menor numero de intentos</li>
+                    </ul>
+                </div>
+
+                <button onclick="comenzarJuego()">EMPIEZA</button>
+            </div>
+        </div>
+        <div class="content">
+            <div id="tablero-juego">
+                <div id="card1" class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img class="front-image" src="">
+                        </div>
+                        <div class="card-back">
+                            <img class="back-image" src="./logo.svg">
+                        </div>
+                    </div>
+                </div>
+                <div id="card2" class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img class="front-image" src="">
+                        </div>
+                        <div class="card-back">
+                            <img class="back-image" src="./logo.svg">
+                        </div>
+                    </div>
+                </div>
+                <div id="card3" class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img class="front-image" src="">
+                        </div>
+                        <div class="card-back">
+                            <img class="back-image" src="./logo.svg">
+                        </div>
+                    </div>
+                </div>
+                <div id="card4" class="card">
+                   <div class="card-inner">
+                        <div class="card-front">
+                            <img class="front-image" src="">
+                        </div>
+                        <div class="card-back">
+                            <img class="back-image" src="./logo.svg">
+                        </div>
+                    </div>
+                </div>
+                <div id="card5" class="card">
+                   <div class="card-inner">
+                        <div class="card-front">
+                            <img class="front-image" src="">
+                        </div>
+                        <div class="card-back">
+                            <img class="back-image" src="./logo.svg">
+                        </div>
+                    </div>
+                </div>
+                <div id="card6" class="card">
+                   <div class="card-inner">
+                        <div class="card-front">
+                            <img class="front-image" src="">
+                        </div>
+                        <div class="card-back">
+                            <img class="back-image" src="./logo.svg">
+                        </div>
+                    </div>
+                </div>
+                <div id="card7" class="card">
+                   <div class="card-inner">
+                        <div class="card-front">
+                            <img class="front-image" src="">
+                        </div>
+                        <div class="card-back">
+                            <img class="back-image" src="./logo.svg">
+                        </div>
+                    </div>
+                </div>
+                <div id="card8" class="card">
+                   <div class="card-inner">
+                        <div class="card-front">
+                            <img class="front-image" src="">
+                        </div>
+                        <div class="card-back">
+                            <img class="back-image" src="./logo.svg">
+                        </div>
+                    </div>
+                </div>
+                <div id="card9" class="card">
+                   <div class="card-inner">
+                        <div class="card-front">
+                            <img class="front-image" src="">
+                        </div>
+                        <div class="card-back">
+                            <img class="back-image" src="./logo.svg">
+                        </div>
+                    </div>
+                </div>
+                <div id="card10" class="card">
+                   <div class="card-inner">
+                        <div class="card-front">
+                            <img class="front-image" src="">
+                        </div>
+                        <div class="card-back">
+                            <img class="back-image" src="./logo.svg">
+                        </div>
+                    </div>
+                </div>
+                <div id="card11" class="card">
+                   <div class="card-inner">
+                        <div class="card-front">
+                            <img class="front-image" src="">
+                        </div>
+                        <div class="card-back">
+                            <img class="back-image" src="./logo.svg">
+                        </div>
+                    </div>
+                </div>
+                <div id="card12" class="card">
+                   <div class="card-inner">
+                        <div class="card-front">
+                            <img class="front-image" src="">
+                        </div>
+                        <div class="card-back">
+                            <img class="back-image" src="./logo.svg">
+                        </div>
+                    </div>
+                </div>
+                <div id="card13" class="card">
+                   <div class="card-inner">
+                        <div class="card-front">
+                            <img class="front-image" src="">
+                        </div>
+                        <div class="card-back">
+                            <img class="back-image" src="./logo.svg">
+                        </div>
+                    </div>
+                </div>
+                <div id="card14" class="card">
+                   <div class="card-inner">
+                        <div class="card-front">
+                            <img class="front-image" src="">
+                        </div>
+                        <div class="card-back">
+                            <img class="back-image" src="./logo.svg">
+                        </div>
+                    </div>
+                </div>
+                <div id="card15" class="card">
+                   <div class="card-inner">
+                        <div class="card-front">
+                            <img class="front-image" src="">
+                        </div>
+                        <div class="card-back">
+                            <img class="back-image" src="./logo.svg">
+                        </div>
+                    </div>
+                </div>
+                <div id="card16" class="card">
+                   <div class="card-inner">
+                        <div class="card-front">
+                            <img class="front-image" src="">
+                        </div>
+                        <div class="card-back">
+                            <img class="back-image" src="./logo.svg">
+                        </div>
+                    </div>
+                </div>
+                <div id="card17" class="card">
+                   <div class="card-inner">
+                        <div class="card-front">
+                            <img class="front-image" src="">
+                        </div>
+                        <div class="card-back">
+                            <img class="back-image" src="./logo.svg">
+                        </div>
+                    </div>
+                </div>
+                <div id="card18" class="card">
+                   <div class="card-inner">
+                        <div class="card-front">
+                            <img class="front-image" src="">
+                        </div>
+                        <div class="card-back">
+                            <img class="back-image" src="./logo.svg">
+                        </div>
+                    </div>
+                </div>
+                <div id="card19" class="card">
+                   <div class="card-inner">
+                        <div class="card-front">
+                            <img class="front-image" src="">
+                        </div>
+                        <div class="card-back">
+                            <img class="back-image" src="./logo.svg">
+                        </div>
+                    </div>
+                </div>
+                <div id="card20" class="card">
+                   <div class="card-inner">
+                        <div class="card-front">
+                            <img class="front-image" src="">
+                        </div>
+                        <div class="card-back">
+                            <img class="back-image" src="./logo.svg">
+                        </div>
+                    </div>
+                </div>
+                <div id="card21" class="card">
+                   <div class="card-inner">
+                        <div class="card-front">
+                            <img class="front-image" src="">
+                        </div>
+                        <div class="card-back">
+                            <img class="back-image" src="./logo.svg">
+                        </div>
+                    </div>
+                </div>
+                <div id="card22" class="card">
+                   <div class="card-inner">
+                        <div class="card-front">
+                            <img class="front-image" src="">
+                        </div>
+                        <div class="card-back">
+                            <img class="back-image" src="./logo.svg">
+                        </div>
+                    </div>
+                </div>
+                <div id="card23" class="card">
+                   <div class="card-inner">
+                        <div class="card-front">
+                            <img class="front-image" src="">
+                        </div>
+                        <div class="card-back">
+                            <img class="back-image" src="./logo.svg">
+                        </div>
+                    </div>
+                </div>
+                <div id="card24" class="card">
+                   <div class="card-inner">
+                        <div class="card-front">
+                            <img class="front-image" src="">
+                        </div>
+                        <div class="card-back">
+                            <img class="back-image" src="./logo.svg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="stats">
+                <div id="content-puntos">
+                    <span id="aciertos">Aciertos: 0</span>
+                    <span id="fallos">Fallos: 0</span>
+                    <button id="volver">Volver a jugar</button>
+
+                </div>
+                <div id="win">
+                    <h1>
+                        ¡HAS GANADO CON <span id="intentos">0</span> INTENTOS!
+                    </h1>
+                    <button id="volver-jugar">Volver a jugar</button>
+                </div>
+            </div>
+         
+        </div>
+    </div>
+    <audio id="victoria" src="./victoria.mp3"></audio>
+    <audio id="aciertoSonido" src="./success.mp3"></audio>
+    <audio id="falloSonido" src="./error.mp3"></audio>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
